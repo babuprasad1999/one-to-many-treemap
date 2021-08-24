@@ -27,7 +27,7 @@ public class OrderController {
 	private OrderService orderService;
 
 	@PostMapping("/saveorder")
-	public ResponseEntity<Order> saveOrder(@RequestBody Order order, int orderNo) {
+	public  saveOrder(@RequestBody Order order, int orderNo) {
 
 		Optional<Order> order2 = orderService.findById(orderNo);
 
