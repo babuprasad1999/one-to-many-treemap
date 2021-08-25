@@ -3,9 +3,7 @@ package com.otm.treeset.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.aspectj.weaver.patterns.ThrowsPattern;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.otm.treeset.entities.Order;
 import com.otm.treeset.exception.ExistedRecordException;
-import com.otm.treeset.repository.OrderRepository;
 import com.otm.treeset.service.OrderService;
 
 @RestController
@@ -29,7 +26,7 @@ public class OrderController {
 	@PostMapping("/saveorder")
 	public ResponseEntity<Order> saveOrder(@RequestBody Order order, int orderNo) {
 
-		 = orderService.findById(orderNo);
+		Optional<Order> order2 = orderService.findById(orderNo);
 
 		// orderNo = order2.get().getOrderNo();
 		if (order2.isEmpty()) {
