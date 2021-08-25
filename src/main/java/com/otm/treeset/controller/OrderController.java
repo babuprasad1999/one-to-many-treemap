@@ -29,7 +29,7 @@ public class OrderController {
 	@PostMapping("/saveorder")
 	public ResponseEntity<Order> saveOrder(@RequestBody Order order, int orderNo) {
 
-		Optional<Order> order2 = orderService.findById(orderNo);
+		 = orderService.findById(orderNo);
 
 		// orderNo = order2.get().getOrderNo();
 		if (order2.isEmpty()) {
